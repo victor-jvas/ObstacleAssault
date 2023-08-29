@@ -33,7 +33,9 @@ void AMovingPlatform::Tick(float DeltaTime)
 
 	if (Distance > MaxDistance)
 	{
-		StartLocation = CurrentLocation;
+		const FVector SpeedNormal = Speed.GetSafeNormal();
+		StartLocation = StartLocation + MaxDistance * SpeedNormal;
+		SetActorLocation(StartLocation);
 		Speed = -Speed;
 	}
 
