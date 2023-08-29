@@ -23,4 +23,13 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	UPROPERTY(EditAnywhere, Category="Movement")
+	FVector Speed = FVector(100, 0, 0);
+	UPROPERTY(EditAnywhere, Category="Movement")
+	float MaxDistance = 200;
+	
+	FVector StartLocation;
+
+	
+
 };
