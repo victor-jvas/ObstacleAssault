@@ -49,9 +49,8 @@ void AMovingPlatform::MovePlatform(float DeltaTime)
 
 void AMovingPlatform::RotatePlatform(float DeltaTime)
 {
-	FRotator CurrentRotation = GetActorRotation();
-	CurrentRotation = CurrentRotation + RotationSpeed * DeltaTime;
-	SetActorRotation(CurrentRotation);
+	
+	AddActorLocalRotation(RotationSpeed*DeltaTime);
 	
 }
 
